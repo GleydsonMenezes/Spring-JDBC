@@ -22,7 +22,7 @@ public class Main {
             clientes.salvar(new Cliente ("Douglas"));
             clientes.salvar(new Cliente("Gleydson"));
 
-            List<Cliente> todosClientes = clientes.obterTodos();
+           List<Cliente> todosClientes = clientes.obterTodos();
             todosClientes.forEach(System.out::println);
 
             todosClientes.forEach(c -> {
