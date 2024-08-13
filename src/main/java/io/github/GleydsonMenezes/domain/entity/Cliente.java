@@ -3,6 +3,9 @@ package io.github.GleydsonMenezes.domain.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+import java.util.Set;
+
 @Entity
 @Table(name = "cliente")
 public class Cliente {
@@ -14,6 +17,13 @@ public class Cliente {
 
     @Column(name = "nome", length = 100)
     private String nome;
+
+    @Column(name = "cpf", length = 11)
+    private String cpf;
+
+    @OneToMany(mappedBy = "cliente")
+    private Set<Pedido> pedidos;
+
 
     public Cliente(){}
 
@@ -42,6 +52,14 @@ public class Cliente {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     @Override
